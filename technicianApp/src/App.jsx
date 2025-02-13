@@ -1,23 +1,17 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar'
-
-
-
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Login from "./pages/Login";
+import { AuthProvider } from "./context/ContextApi";
 
 function App() {
-  
-
   return (
     <>
-   <div>
-      <Navbar />
-      <h1 className="text-center mt-10 text-2xl">Welcome to TechCorp!</h1>
-    </div>
-
-    
-      
+      <AuthProvider>
+        <Navbar />
+        {/* <Login /> */}
+      </AuthProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
