@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import HomeSlider from "../components/HomeSlider";
+import HomeStats from "../components/HomeStats";
 
 const services = [
   { name: "Women's Salon & Spa", icon: "💆‍♀️" },
@@ -12,48 +13,55 @@ const services = [
   { name: "Full home painting", icon: "🎨" },
 ];
 
-
-
 const Home = () => {
-  
-
   return (
-    <div className="flex flex-col h-screen bg-white">
-      <div className="flex flex-row h-full">
-        <div className="flex-1 p-4">
-          <div>
-            <h1 className="text-4xl font-medium text-black ml-[8rem] mt-7">
-              Home services at your doorstep
-            </h1>
-          </div>
-          <div className="w-[30rem] p-6 border border-gray-300 rounded-lg mt-10 ml-[8rem]">
-            <h3 className="text-gray-700 text-2xl font-medium mb-6">
-              What are you looking for?
-            </h3>
-            <div className="grid grid-cols-3 gap-4">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center justify-center bg-gray-100 p-4 rounded-lg shadow-sm transition duration-300 hover:bg-gray-200 hover:shadow-md cursor-pointer"
-                >
-                  <span className="text-3xl mb-2">{service.icon}</span>
-                  <span className="text-sm text-gray-700 text-center">
-                    {service.name}
-                  </span>
-                </div>
-              ))}
+    <div className="flex flex-col bg-white p-10">
+      {/* Hero */}
+      <div>
+        <div className="flex flex-row h-full">
+          <div className="flex-1">
+            <div>
+              <h1 className="text-4xl font-medium text-black mt-4">
+                Home services at your
+                <br />
+                doorstep
+              </h1>
+            </div>
+            <div className="w-[80%] p-6 border border-gray-300 rounded-lg mt-10 ">
+              <h3 className="text-gray-700 text-2xl font-medium mb-6">
+                What are you looking for?
+              </h3>
+              <div className="grid grid-cols-3 gap-4">
+                {services.map((service, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center justify-center bg-gray-100 p-4 rounded-lg shadow-sm transition duration-300 hover:bg-gray-200 hover:shadow-md cursor-pointer"
+                  >
+                    <span className="text-3xl mb-2">{service.icon}</span>
+                    <span className="text-sm text-gray-700 text-center">
+                      {service.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+          <div className="flex-1 text-white">
+            <img
+              className="rounded-lg h-[100vh]"
+              src="src/Images/imgh-1.webp"
+              alt="Description of image"
+            />
+          </div>
         </div>
-        <div className="flex-1 text-white p-4">
-          <img
-            style={{ width: "39rem", height: "38rem" }}
-            className="rounded-lg mt-7"
-            src="src/Images/imgh-1.webp"
-            alt="Description of image"
-          />
-        </div>
-       
+      </div>
+      {/* Stats */}
+      <div className="py-8">
+        <HomeStats />
+      </div>
+      {/* Slider */}
+      <div>
+        <HomeSlider />
       </div>
     </div>
   );
