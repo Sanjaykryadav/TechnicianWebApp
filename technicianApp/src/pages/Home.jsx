@@ -1,17 +1,5 @@
 import React, { useState } from "react";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
-// Import images
-import img3 from "../Images/img-3.webp";
-import img5 from "../Images/img-5.webp";
-import img6 from "../Images/img-6.webp";
-import img7 from "../Images/img-7.webp";
-import img8 from "../Images/img-8.webp";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const services = [
   { name: "Women's Salon & Spa", icon: "💆‍♀️" },
@@ -24,7 +12,7 @@ const services = [
   { name: "Full home painting", icon: "🎨" },
 ];
 
-const images = [img3, img5, img6, img7, img8];
+
 
 const Home = () => {
   return (
@@ -63,41 +51,7 @@ const Home = () => {
             alt="Description of image"
           />
         </div>
-      </div>
-      <div className="w-full h-[400px] flex ml-10 mr-10 mt-10">
-        <div className="relative w-full max-w-4xl">
-          <Swiper
-            modules={[Navigation]}
-            spaceBetween={20}
-            slidesPerView={3}
-            navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            }}
-            loop
-          >
-            {images.map((img, index) => (
-              <SwiperSlide key={index} className="flex justify-center">
-                <div className="p-2 w-auto h-auto">
-                  <img
-                    src={img}
-                    alt={`Slide ${index + 1}`}
-                    className=" object-contain rounded-xl shadow-lg"
-                    style={{ width: "800px", height: "300px" }} // Inline styles for testing
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          {/* Left Button */}
-          <button className="swiper-button-prev absolute top-1/2 left-0 z-10 p-3 bg-gray-700 text-white rounded-full transform -translate-y-1/2">
-            <FaArrowLeft size={20} />
-          </button>
-          {/* Right Button */}
-          <button className="swiper-button-next absolute top-1/2 right-0 z-10 p-3 bg-gray-700 text-white rounded-full transform -translate-y-1/2">
-            <FaArrowRight size={20} />
-          </button>
-        </div>
+       
       </div>
     </div>
   );
